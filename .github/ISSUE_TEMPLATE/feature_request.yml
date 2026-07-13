@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a new endpoint wrapper or library improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What integration problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API
+      description: Show the TypeScript API you would like to use.
+      render: typescript
+  - type: textarea
+    id: source
+    attributes:
+      label: Official documentation
+      description: Link to the official platform documentation for the behavior or endpoint.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: This belongs in the reusable client library, not in one specific dashboard.
+          required: true
