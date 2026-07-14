@@ -37,14 +37,6 @@ Never expose the API key in browser code.
 
 ## Installation
 
-Until the package is published to npm:
-
-```bash
-npm install github:CichockiAdrian/erli-rest-client-ts
-```
-
-After publication:
-
 ```bash
 npm install erli-rest-client-ts
 ```
