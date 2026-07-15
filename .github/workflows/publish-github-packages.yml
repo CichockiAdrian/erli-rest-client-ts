@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           registry-url: "https://npm.pkg.github.com"
           scope: "@cichockiadrian"
 
@@ -28,10 +28,14 @@ jobs:
       - name: Run checks
         run: npm run check
 
-      - name: Set GitHub Packages name
-        run: npm pkg set name="@cichockiadrian/erli-rest-client-ts"
+      - name: Configure GitHub Packages
+        run: |
+          npm pkg set name="@cichockiadrian/erli-rest-client-ts"
+          npm pkg set publishConfig.registry="https://npm.pkg.github.com"
+          npm config set @cichockiadrian:registry https://npm.pkg.github.com
+          npm config set //npm.pkg.github.com/:_authToken "$NODE_AUTH_TOKEN"
 
       - name: Publish to GitHub Packages
-        run: npm publish --registry=https://npm.pkg.github.com
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
