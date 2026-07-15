@@ -1,4 +1,4 @@
-import { ErliClient } from "erli-rest-client-ts";
+import { ErliClient } from "../src/index.js";
 
 const apiKey = process.env.ERLI_API_KEY;
 if (!apiKey) {
